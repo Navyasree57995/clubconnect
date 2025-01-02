@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GVP Clubs Portal</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    /* Logo Styles */
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      background-color: #ffffff;
+    }
+
+    .logo-container img {
+      width: 500px;
+      height: auto;
+    }
+
+    /* Navigation Bar Styles */
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #0078d7;
+      padding: 10px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #f0db4f;
+    }
+
+    /* Section Styles */
+    section {
+      display: none;
+      padding: 40px;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    .events-container {
+      text-align: left;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+
+    .events-container h3 {
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .events-container ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .events-container ul li {
+      margin-bottom: 15px;
+      font-size: 16px;
+      color: #555;
+    }
+
+    .events-container ul li::before {
+      content: "•";
+      margin-right: 8px;
+      color: #0078d7;
+      font-weight: bold;
+    }
+
+    .event-description {
+      font-size: 14px;
+      color: #777;
+      margin-top: 5px;
+      margin-left: 20px;
+    }
+    .register-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #0078d7;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+  background-color: #005bb5;
+}
+
+  </style>
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => section.classList.remove('active'));
+      document.getElementById(sectionId).classList.add('active');
+    }
+
+    // Show the welcome section by default
+    window.onload = () => showSection('welcome-section');
+  </script>
+</head>
+<body>
+
+  <!-- Logo Section -->
+  <div class="logo-container">
+    <img src="gvp.jpg" alt="Gayatri Vidya Parishad Logo">
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a onclick="showSection('welcome-section')">Home</a></li>
+      <li><a onclick="showSection('upcoming-events')">Upcoming Events</a></li>
+      <li><a onclick="showSection('famous-events')">Famous Events</a></li>
+      <li><a onclick="showSection('login-section')">Login</a></li>
+      <li><a onclick="showSection('signup-section')">Signup</a></li>
+    </ul>
+  </nav>
+
+  <!-- Welcome Section -->
+  <section id="welcome-section" class="active">
+    <h1>Welcome to GVP Clubs!</h1>
+    <p>Join a community of learners and innovators at Gayatri Vidya Parishad College of Engineering. Explore opportunities, events, and clubs to enhance your experience!</p>
+  </section>
+
+  <section id="upcoming-events">
+    <h1>Upcoming Events</h1>
+    <div class="events-container">
+      <h3>Upcoming Event Highlights:</h3>
+      <ul>
+        <li>Hackathon 2025
+          <p class="event-description">A 24-hour coding event where students solve real-world problems using technology. Compete for exciting prizes!</p>
+          <button class="register-button">Register</button>
+        </li>
+        <li>Annual Cultural Fest
+          <p class="event-description">An extravaganza of music, dance, drama, and more. Join us to celebrate diverse talents!</p>
+          <button class="register-button">Register</button>
+        </li>
+        <li>Robotics Workshop
+          <p class="event-description">Hands-on experience in building and programming robots. Open to all engineering enthusiasts.</p>
+          <button class="register-button">Register</button>
+        </li>
+        <li>AI and ML Seminar
+          <p class="event-description">A series of expert talks on the latest advancements in Artificial Intelligence and Machine Learning.</p>
+          <button class="register-button">Register</button>
+        </li>
+        <li>Sports Meet
+          <p class="event-description">Showcase your athletic skills in various sports and bring glory to your club!</p>
+          <button class="register-button">Register</button>
+        </li>
+      </ul>
+    </div>
+  </section>
+  
+
+  <!-- Famous Events Section -->
+  <section id="famous-events">
+    <h1>Famous Events</h1>
+    <div class="events-container">
+      <h3>Famous Past Events:</h3>
+      <ul>
+        <li>Tech Spark 2023
+          <p class="event-description">A grand success with over 50 technical projects showcased and multiple industry experts in attendance.</p>
+        </li>
+        <li>Eco-Club Green Drive
+          <p class="event-description">A tree plantation drive that resulted in the planting of 1000+ trees across campus.</p>
+        </li>
+        <li>Art and Photography Exhibition
+          <p class="event-description">An inspiring display of creativity by students, featuring 200+ artworks and photographs.</p>
+        </li>
+        <li>Entrepreneurship Summit
+          <p class="event-description">A platform where budding entrepreneurs pitched their ideas to investors and mentors.</p>
+        </li>
+        <li>Music and Dance Extravaganza
+          <p class="event-description">A night to remember with stunning performances by talented students.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <!-- Login Section -->
+<section id="login-section">
+    <div class="login-container">
+      <h2>Login</h2>
+      <form action="/submit-login" method="POST">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+        <div class="form-group">
+          <label for="role">Select Role</label>
+          <select id="role" name="role" required>
+            <option value="">--Select Role--</option>
+            <option value="admin">Admin</option>
+            <option value="club_head">Club Head</option>
+            <option value="student">Student</option>
+          </select>
+        </div>
+        <button type="submit" class="login-button">Login</button>
+      </form>
+    </div>
+  </section>
+  
+  <style>
+    .login-container {
+      width: 400px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+  
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+  
+    .form-group {
+      margin-bottom: 15px;
+    }
+  
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #555;
+    }
+  
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      color: #333;
+      background-color: #f9f9f9;
+    }
+  
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #0078d7;
+    }
+  
+    .login-button {
+      width: 100%;
+      padding: 10px;
+      background-color: #0078d7;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+  
+    .login-button:hover {
+      background-color: #005bb5;
+    }
+  </style>
+  
+
+
+  
+
+  <!-- Signup Section -->
+  <section id="signup-section">
+    <h1>Signup</h1>
+    <p>Signup functionality coming soon!</p>
+  </section>
+
+</body>
+</html>
+
+  
